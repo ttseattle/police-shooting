@@ -8,7 +8,7 @@ var drawMap() = function() {
   	// Add the layer to your map
   	layer.addTo(map);
   	// Execute your function to get data
-  	//getData();
+  	
 }
 
 // Function for getting data
