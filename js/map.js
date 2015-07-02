@@ -1,5 +1,5 @@
 // Function to draw your map
-var drawMap() = function() {
+var drawMap = function() {
   	// Create map and set view
   	var map = L.map('container');
   	map.setView([47.6097,-122.3331], 12);
@@ -8,7 +8,7 @@ var drawMap() = function() {
   	// Add the layer to your map
   	layer.addTo(map);
   	// Execute your function to get data
-  	
+  	getData();
 }
 
 // Function for getting data
