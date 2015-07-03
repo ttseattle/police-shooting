@@ -8,11 +8,11 @@ var drawMap = function() {
   	// Add the layer to your map
   	layer.addTo(map);
   	// Execute your function to get data
-  	getData();
+  	getData(map);
 }
 
 // Function for getting data
-var getData = function() {
+var getData = function(map) {
   var data;
     // Execute an AJAX request to get the data in data/response.js
     $.ajax({
