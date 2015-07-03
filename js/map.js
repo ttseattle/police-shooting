@@ -8,9 +8,27 @@ var drawMap = function() {
   	// Add the layer to your map
   	layer.addTo(map);
   	// Execute your function to get data
-  	getData(map);
+  	//getData(map);
+    var data;
+    // Execute an AJAX request to get the data in data/response.js
+    $.ajax({
+      url: 'data/response.json',
+      type: "get", 
+      // When your request is successful, call your customBuild function
+      success: function(dat) {
+          data = dat;
+          data.map(function(d) { 
+            var marker = new L.circleMarker([d.latitude, d.longitude], {
+                color: 'red',
+                radius: 4
+            });
+            marker.addTo(map);
+          });
+        },
+      dataType: "json"
+    });
 }
-
+/*
 // Function for getting data
 var getData = function(map) {
   var data;
@@ -31,7 +49,7 @@ var getData = function(map) {
         },
       dataType: "json"
     });
-}
+}*/
 /*
 // Do something creative with the data here!  
 var customBuild = function(d) { 
