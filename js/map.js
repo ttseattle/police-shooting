@@ -52,6 +52,8 @@ var customBuild = function(data, map) {
   data.map(function(d){
     var marker = new L.marker([d.lat, d.lng]);
     marker.addTo(map);
+    var text = d["Victim Name"];
+    marker.bindPopup(text);
   });
 }
 
