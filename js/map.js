@@ -38,8 +38,21 @@ var getData = function(map) {
 
 // Do something creative with the data here!  
 var customBuild = function(d, map) {
+  var year = d.year;
+  var fifteen = L.layerGroup(year == 2015);
+  var fourteen = L.layerGroup(year == 2014);
+
+  var yearMaps = {
+    "2015": fifteen,
+    "2014": fourteen
+  };
+
+  L.control.layers(yearMaps).addTo(map);
+
   var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
-  var marker = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});
+  var marker = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});  
   marker.addTo(map);
+  var text = d.offense_type;
+  marker.bindPopup(text);
 }
 
