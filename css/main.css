@@ -1,4 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Megrim);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
 /* You'll probably want to add some styles here */
-body {
+h1 {
 	text-align: middle;
+	font-family: 'Megrim';
+
+}
+p {
+	text-align: middle;
+	font-family: 'Raleway';
 }

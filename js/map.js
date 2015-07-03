@@ -53,7 +53,7 @@ var customBuild = function(data, map) {
     var text = d["Victim Name"];
     var age = d["Victim's Age"];
     var marker = new L.circleMarker([d.lat, d.lng], {
-      radius: age,
+      radius: age/10,
       color: 'yellow'
     });
     marker.addTo(map);
