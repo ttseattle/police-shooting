@@ -27,7 +27,7 @@ var getData = function(map) {
             data = dat;
             // Loop through your data array
             // d represents each data element in data array
-            data.map(customBuild(d));
+            data.map(customBuild(data));
         },
           
          dataType:"json"
