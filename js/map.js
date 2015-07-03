@@ -1,4 +1,4 @@
-// Function to draw your map
+/*// Function to draw your map
 var drawMap = function() {
   	// Create map and set view
   	var map = L.map('container');

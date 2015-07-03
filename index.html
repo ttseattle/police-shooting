@@ -15,9 +15,45 @@
     <div id="container" style="width:500px; height:500px;"></div>
     <script>
     	// This is where you should execute your drawMap function // 
-      $(document).ready(function() {
+      /*$(document).ready(function() {
         drawMap();
+      });*/
+            // Create a new leaflet map in the "container" div
+      // syntax: var MAP_VARIABLE = L.map('CONTAINER_NAME')
+      var map = L.map('container');
+
+      // Use the setView method to set the lat/long and zoom of your map
+      // syntax: VARIABLE.setView([LATITUDE, LONGITUDE], ZOOM)
+      map.setView([34,-100],4);
+
+      // Create an OpenStreetMap tile layer variable using their url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+      // syntax: var LAYER_VARIABLE = L.tileLayer('URL')
+      var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+
+      // Add the layer to your map
+      // Syntax: LAYER_VARIABLE.addTo(MAP_VARIABLE)
+      layer.addTo(map);
+
+      // Get the data using an ajax request
+      var data;
+      $.ajax({
+        url:'https://data.seattle.gov/resource/7ais-f98f.json?year=2015&$limit=500',
+        type: "get",
+        success:function(dat) {
+            data = dat;
+            // Loop through your data array
+            // d represents each data element in data array
+            data.map(function(d) {
+              var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
+              var newCircle = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});
+              newCircle.addTo(map);
+          // Use syntax below to add a point for each piece of data
+            });
+        },
+          
+         dataType:"json"
       });
+
     </script>
   </body>
 </html>
