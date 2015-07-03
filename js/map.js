@@ -2,7 +2,7 @@
 var drawMap = function() {
   // Create map and set view
   var map = L.map('container');
-  map.setView([47.6097,-122.3331], 5);
+  map.setView([37.892,-101.689], 4);
   // Create an tile layer variable using the appropriate url
   var beginningLayer = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -26,7 +26,8 @@ var drawMap = function() {
   beginningLayer.addTo(map);
   var timeMaps = {
     "Daytime": lightLayer,
-    "Nighttime": darkLayer
+    "Nighttime": darkLayer,
+    "Normal": beginningLayer
   };
   L.control.layers(timeMaps).addTo(map);
   // Execute your function to get data
@@ -49,7 +50,8 @@ var getData = function(map) {
 
 var customBuild = function(data, map) {
   data.map(function(d){
-    var circle = new L.circle([d.lat, d.lng], 200, {color:'blue', opacity:.5}).addTo(map);
+    var marker = new L.marker([d.lat, d.lng]);
+    marker.addTo(map);
   });
 }
 
