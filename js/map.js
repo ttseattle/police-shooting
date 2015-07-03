@@ -49,18 +49,36 @@ var getData = function(map) {
 }
 
 var customBuild = function(data, map) {
+  //var yearArray = [];
+  var fifteenArray = [];
   data.map(function(d){
     var text = d["Victim Name"];
     var age = d["Victim's Age"];
     var gender = d["Victim's Gender"];
-    var color = gender == 'male' ? 'blue' : 'red';
+    var color = 'blue';
+    var year = (new Date(d["Timestamp"])).getFullYear();
+    /*if (yearArray.indexOf(year) == -1) {
+      yearArray.push(year);
+    } */
+    if (gender == "female") {
+      color = 'red';
+    }
     var marker = new L.circleMarker([d.lat, d.lng], {
       radius: age/10,
       color: color
     });
+    //yearArray.indexOf(year).push(marker);
+    if (year == 2015) {
+      fifteenArray.push(marker);
+    }
     marker.addTo(map);
     marker.bindPopup(text);
   });
+  var fifteens = L.layerGroup(fifteenArray);
+  var fifteenMap = {
+    "2015": fifteens
+  }
+  L.control.layers(fifteenMap).addTo(map);
 }
 
 // Do something creative with the data here!  
