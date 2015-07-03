@@ -50,9 +50,13 @@ var getData = function(map) {
 
 var customBuild = function(data, map) {
   data.map(function(d){
-    var marker = new L.marker([d.lat, d.lng]);
-    marker.addTo(map);
     var text = d["Victim Name"];
+    var age = d["Victim's Age"];
+    var marker = new L.circleMarker([d.lat, d.lng], {
+      radius: age,
+      color: 'yellow'
+    });
+    marker.addTo(map);
     marker.bindPopup(text);
   });
 }
