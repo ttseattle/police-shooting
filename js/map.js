@@ -52,9 +52,11 @@ var customBuild = function(data, map) {
   data.map(function(d){
     var text = d["Victim Name"];
     var age = d["Victim's Age"];
+    var gender = d["Victim's Gender"];
+    var color = gender == 'male' ? 'blue' : 'red';
     var marker = new L.circleMarker([d.lat, d.lng], {
       radius: age/10,
-      color: 'yellow'
+      color: color
     });
     marker.addTo(map);
     marker.bindPopup(text);

@@ -4,5 +4,19 @@
 h1, p {
 	text-align: center;
 	font-family: 'Quicksand';
+	color: white;
 
+}
+
+h1 {
+	text-align: center;
+	font-style: bold;
+}
+
+#container {
+	border: 5px solid white;
+}
+
+body {
+	background-color: black;
 }
