@@ -27,16 +27,17 @@ var getData = function(map) {
             data = dat;
             // Loop through your data array
             // d represents each data element in data array
-            data.map(function(d) {
-              var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
-              var newCircle = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});
-              newCircle.addTo(map);
-          // Use syntax below to add a point for each piece of data
-            });
+            data.map(customBuild(d));
         },
           
          dataType:"json"
       });
+}
+
+var customBuild = function(d) {
+        var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
+        var newCircle = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});
+        newCircle.addTo(map);
 }
 
 /*// Function to draw your map
