@@ -27,14 +27,14 @@ var getData = function(map) {
             data = dat;
             // Loop through your data array
             // d represents each data element in data array
-            data.map(function(d) { customBuild(d); });
+            data.map(function(d, map) { customBuild(d); });
         },
           
          dataType:"json"
       });
 }
 
-var customBuild = function(d) {
+var customBuild = function(d, map) {
         var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
         var newCircle = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});
         newCircle.addTo(map);
