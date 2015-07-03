@@ -35,35 +35,33 @@ var drawMap = function() {
 
 // Execute your function to get data
 var getData = function(map) {
-  var data;
   // Execute an AJAX request to get the data in data/response.js
   $.ajax({
     url:'data/response.json',
     type: "get",
     // When your request is successful, call your customBuild function
-    success:function(dat) {
-      data = dat;
-      // Loop through your data array
-      // d represents each data element in data array
-      data.map(function(d) { 
-        customBuild(d, map); 
-      });
+    success:function(data) {
+      customBuild(data, map);
     },
     dataType:"json"
   });
 }
 
 // Do something creative with the data here!  
-var customBuild = function(d, map) {
+var customBuild = function(data, map) {
+  data.map(function(d) {
+    var marker = new L.marker([d.lat, d.lng]);
+  });
+/*
   var year = d.year;
   var fifteen = L.layerGroup(year == 2015);
   var fourteen = L.layerGroup(year == 2014);
 
-  /*var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
-  var marker = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});  */
+  var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
+  var marker = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});  
   var marker = new L.marker([d.latitude, d.longitude]);
   marker.addTo(map);
   var text = d.offense_type;
-  marker.bindPopup(text);
+  marker.bindPopup(text); */
 }
 
