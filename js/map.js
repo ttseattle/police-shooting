@@ -14,7 +14,10 @@ var drawMap = function() {
       // Add the layer to your map
       // Syntax: LAYER_VARIABLE.addTo(MAP_VARIABLE)
       layer.addTo(map);
+	getData(map);
+}
 
+var getData = function(map) {
       // Get the data using an ajax request
       var data;
       $.ajax({
