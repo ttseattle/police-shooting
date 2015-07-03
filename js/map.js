@@ -38,7 +38,7 @@ var getData = function(map) {
   var data;
   // Execute an AJAX request to get the data in data/response.js
   $.ajax({
-    url:'https://data.seattle.gov/resource/7ais-f98f.json?year=2015&$limit=500',
+    url:'../data/response.json',
     type: "get",
     // When your request is successful, call your customBuild function
     success:function(dat) {
@@ -59,8 +59,9 @@ var customBuild = function(d, map) {
   var fifteen = L.layerGroup(year == 2015);
   var fourteen = L.layerGroup(year == 2014);
 
-  var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
-  var marker = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});  
+  /*var color = d.offense_type.indexOf('THEFT') != -1 ? 'red' : 'blue';
+  var marker = new L.circleMarker([d.latitude, d.longitude], {color: color, radius: 4});  */
+  var marker = new L.marker([d.latitude, d.longitude]);
   marker.addTo(map);
   var text = d.offense_type;
   marker.bindPopup(text);
