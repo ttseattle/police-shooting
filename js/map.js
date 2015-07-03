@@ -9,7 +9,7 @@ var drawMap = function() {
     maxZoom: 18,
     id: 'tishat.mk86k05g',
     accessToken: 'pk.eyJ1IjoidGlzaGF0IiwiYSI6ImYyNTgxNTRlOTExMGQ1Y2QxNjYxMjAwZjFhYWFjZTM5In0.bmOXsyE0G3gZsQrlPUesRA'
-  };
+  });
   // Add the layer to your map
   layer.addTo(map);
   // Execute your function to get data
