@@ -1,4 +1,5 @@
 /* You'll probably want to add some styles here */
-body {
-	margin: 0 auto;
+#container {
+	margin: auto;
+	width: 70%;
 }
