@@ -1,5 +1,5 @@
 var drawMap = function() {
-      / Create a new leaflet map in the "container" div
+      // Create a new leaflet map in the "container" div
       // syntax: var MAP_VARIABLE = L.map('CONTAINER_NAME')
       var map = L.map('container');
 
