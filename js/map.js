@@ -29,8 +29,8 @@ var customBuild = function(dat) {
 	data = dat;
 	data.map(function(d) {
 		var marker = new L.circleMarker([d.latitude, d.longitude], {
-			color: red;
-			radius: 4;
+			color: red,
+			radius: 4
 		});
 		marker.addTo(map);
 	});
