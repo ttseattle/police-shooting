@@ -9,6 +9,12 @@ h1 {
 	color: white;
 }
 
+#head-info {
+	background-color: black;
+	width: 100%;
+	position: fixed;
+}
+
 p {
 	font-family: 'Roboto Condensed';
 }
@@ -21,10 +27,9 @@ p {
 	background-color: white;
 	width: 700px;
 	margin: 0 auto;
-	margin-top: 0px;
-	padding: 10px;
+	opacity: 0.8;
 }
 
 body {
-	background-color: midnightblue;
+	background-color: grey;
 }

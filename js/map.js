@@ -19,11 +19,11 @@ var drawMap = function() {
     accessToken: 'pk.eyJ1IjoidGlzaGF0IiwiYSI6ImYyNTgxNTRlOTExMGQ1Y2QxNjYxMjAwZjFhYWFjZTM5In0.bmOXsyE0G3gZsQrlPUesRA'
   });
   // Add the layer to your map
-  lightLayer.addTo(map);
   lightAndDark = {
     "Daytime": lightLayer,
     "Nighttime": darkLayer,
   };
+  lightLayer.addTo(map); //set Daytime as default
   // Execute your function to get data
   getData(map);
 }
@@ -63,7 +63,6 @@ var customBuild = function(data, map) {
     var age = d["Victim's Age"];
     var gender = d["Victim's Gender"];
     var month = parseInt(d["Date Searched"]);
-
     var color;
     if (gender == "Female") {
       color = 'red';
@@ -76,7 +75,6 @@ var customBuild = function(data, map) {
       radius: age/10,
       color: color
     });
-    //marker.addTo(map);
     marker.on('mouseover', function(evt) {
       evt.target.bindPopup(name).openPopup();
     });
@@ -128,7 +126,7 @@ var customBuild = function(data, map) {
   var unknownMap = L.layerGroup(unknown);
 
   var monthMap = {
-    "All months": allMap,
+    "All Months": allMap,
     "January": janMap,
     "February": febMap,
     "March": marMap,
@@ -144,4 +142,5 @@ var customBuild = function(data, map) {
     "Unknown": unknownMap
   }
   L.control.layers(lightAndDark, monthMap).addTo(map);
+  allMap.addTo(map); //set all months as default
 }
