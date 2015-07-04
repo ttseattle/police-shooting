@@ -6,18 +6,24 @@ h1 {
 	text-align: center;
 	font-style: bold;
 	font-family: 'Oswald';
-	color: midnightblue;
+	color: white;
 }
 
 #info {
 	font-family: 'Roboto Condensed';
-	color: white;
-	background-color: black;
+	color: black;
+	background-color: white;
 	width: 700px;
 	margin: 0 auto;
 	opacity: 0.8;
+	padding: 5px;
+	bottom: 10px;
 }
 
 #container {
-	border: 2px solid black;
+	border: 1px solid grey;
+}
+
+body {
+	background-color: black;
 }
