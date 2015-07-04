@@ -84,6 +84,7 @@ var customBuild = function(data, map) {
       evt.target.bindPopup(name).openPopup();
     });
     marker.on('click', function() {
+      evt.target.bindPopup(name).closePopup();
       console.log('you clicked a marker');
     });
   });
