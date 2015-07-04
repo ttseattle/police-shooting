@@ -44,6 +44,13 @@ var getData = function(map) {
 }
 
 var customBuild = function(data, map) {
+  var jan = [];
+  var feb = [];
+  var mar = [];
+  var apr = [];
+  var may = [];
+  var jun = [];
+  var jul = [];
   data.map(function(d){
     var name = d["Victim Name"];
     var summary = d["Summary"];
