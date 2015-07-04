@@ -51,6 +51,12 @@ var customBuild = function(data, map) {
   var may = [];
   var jun = [];
   var jul = [];
+  var aug = [];
+  var sep = [];
+  var oct = [];
+  var nov = [];
+  var dec = [];
+  var unknown = [];
   data.map(function(d){
     var name = d["Victim Name"];
     var summary = d["Summary"];
@@ -70,7 +76,7 @@ var customBuild = function(data, map) {
       radius: age/10,
       color: color
     });
-    marker.addTo(map);
+    //marker.addTo(map);
     marker.on('mouseover', function(evt) {
       evt.target.bindPopup(name).openPopup();
     });
@@ -91,6 +97,18 @@ var customBuild = function(data, map) {
       jun.push(marker);
     } else if (month == 7) {
       jul.push(marker);
+    } else if (month == 8) {
+      aug.push(marker);
+    } else if (month == 9) {
+      sep.push(marker);
+    } else if (month == 10) {
+      oct.push(marker);
+    } else if (month == 11) {
+      nov.push(marker);
+    } else if (month == 12) {
+      dec.push(marker);
+    } else {
+      unknown.push(marker);
     }
 
   });
@@ -101,6 +119,12 @@ var customBuild = function(data, map) {
   var mayMap = L.layerGroup(may);
   var junMap = L.layerGroup(jun);
   var julMap = L.layerGroup(jul);
+  var augMap = L.layerGroup(aug);
+  var sepMap = L.layerGroup(sep);
+  var octMap = L.layerGroup(oct);
+  var novMap = L.layerGroup(nov);
+  var decMap = L.layerGroup(dec);
+  var unknownMap = L.layerGroup(unknown);
 
   var monthMap = {
     "January": janMap,
@@ -109,7 +133,13 @@ var customBuild = function(data, map) {
     "April": aprMap,
     "May": mayMap,
     "June": junMap,
-    "July": julMap
+    "July": julMap,
+    "August": augMap,
+    "September": sepMap,
+    "October": octMap,
+    "November": novMap,
+    "December": decMap,
+    "Unknown": unknownMap
   }
-  L.control.layers(monthMap).addTo(map);
+  monthMap.addTo(map);
 }
