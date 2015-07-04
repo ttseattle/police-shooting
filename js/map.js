@@ -1,3 +1,5 @@
+var maps;
+
 // Function to draw your map
 var drawMap = function() {
   // Create map and set view
@@ -24,12 +26,12 @@ var drawMap = function() {
   });
   // Add the layer to your map
   lightLayer.addTo(map);
-  var timeMaps = {
+  var maps = {
     "Daytime": lightLayer,
     "Nighttime": darkLayer,
     //"Normal": beginningLayer
   };
-  L.control.layers(timeMaps).addTo(map);
+  L.control.layers(maps).addTo(map);
   // Execute your function to get data
   getData(map);
 }
@@ -82,7 +84,7 @@ var customBuild = function(data, map) {
   var fifteenMap = {
     "2015": fifteens
   }
-  L.control.layers(fifteenMap).addTo(map);
+  maps.addLayer(fifteens);
 }
 
 // Do something creative with the data here!  
