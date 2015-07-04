@@ -83,16 +83,15 @@ var customBuild = function(data, map) {
     marker.on('mouseover', function(evt) {
       evt.target.bindPopup(name).openPopup();
     });
-    /*marker.on('click', function() {
-      console.log(summary);
-    });*/
-    marker.bindPopup(summary);
+    marker.on('click', function() {
+      console.log('you clicked a marker');
+    });
   });
-  var fifteens = L.layerGroup(fifteenArray);
+  /*var fifteens = L.layerGroup(fifteenArray);
   var fifteenMap = {
     "2015": fifteens
   }
-  maps.addLayer(fifteens);
+  maps.addLayer(fifteens);*/
 }
 
 // Do something creative with the data here!  
