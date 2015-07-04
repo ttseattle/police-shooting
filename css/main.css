@@ -2,8 +2,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 /* You'll probably want to add some styles here */
+#head-info {
+	position: relative;
+	width: 900px;
+	margin: 0 auto;
+	border-bottom: 2px solid black;
+}
+
 h1 {
-	text-align: center;
 	font-style: bold;
 	font-family: 'Oswald';
 	color: black;
@@ -18,8 +24,8 @@ h1 {
 	opacity: 0.8;
 	padding: 5px;
 	position: absolute;
-	bottom: 10px;
-	right: 10px;
+	top: 0px;
+	border: 2px solid black;
 }
 
 #container {
