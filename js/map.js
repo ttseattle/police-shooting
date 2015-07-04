@@ -84,7 +84,7 @@ var customBuild = function(data, map) {
       evt.target.bindPopup(name).openPopup();
     });
     marker.on('click', function(evt) {
-      console.log(summary);
+      evt.target.bindPopup(summary);
     });
   });
   var fifteens = L.layerGroup(fifteenArray);
