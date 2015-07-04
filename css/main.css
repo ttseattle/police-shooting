@@ -9,17 +9,22 @@ h1 {
 	color: white;
 }
 
+p {
+	font-family: 'Roboto Condensed';
+}
+
 #container {
 	border: 2px solid black;
 }
 
 #info {
 	background-color: white;
-	font-family: 'Roboto Condensed';
 	width: 700px;
 	margin: 0 auto;
+	margin-top: 0px;
+	padding: 10px;
 }
 
 body {
-	background-color: navy;
+	background-color: midnightblue;
 }
