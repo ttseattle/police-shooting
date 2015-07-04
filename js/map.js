@@ -44,6 +44,7 @@ var getData = function(map) {
 }
 
 var customBuild = function(data, map) {
+  var all = [];
   var jan = [];
   var feb = [];
   var mar = [];
@@ -110,8 +111,9 @@ var customBuild = function(data, map) {
     } else {
       unknown.push(marker);
     }
-
+    all.push(marker);
   });
+  var allMap = L.layerGroup(all);
   var janMap = L.layerGroup(jan);
   var febMap = L.layerGroup(feb);
   var marMap = L.layerGroup(mar);
@@ -127,6 +129,7 @@ var customBuild = function(data, map) {
   var unknownMap = L.layerGroup(unknown);
 
   var monthMap = {
+    "All months": allMap,
     "January": janMap,
     "February": febMap,
     "March": marMap,
@@ -141,5 +144,5 @@ var customBuild = function(data, map) {
     "December": decMap,
     "Unknown": unknownMap
   }
-  L.control.layers(monthMap).addTo(map);
+  L.control.layers(null, monthMap).addTo(map);
 }
