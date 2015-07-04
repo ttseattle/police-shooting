@@ -3,16 +3,16 @@
 
 /* You'll probably want to add some styles here */
 #head-info {
-	position: relative;
+	position: absolute;
 	width: 900px;
 	margin: 0 auto;
-	border-bottom: 2px solid black;
 }
 
 h1 {
 	font-style: bold;
 	font-family: 'Oswald';
 	color: black;
+	text-align: center;
 }
 
 #info {
@@ -24,8 +24,7 @@ h1 {
 	opacity: 0.8;
 	padding: 5px;
 	position: absolute;
-	top: 0px;
-	border: 2px solid black;
+	bottom: 10px;
 }
 
 #container {
