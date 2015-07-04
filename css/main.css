@@ -4,8 +4,9 @@
 /* You'll probably want to add some styles here */
 #head-info {
 	background-color: black;
+	height: 100px;
 	width: 100%;
-	position: relative
+	top: 0px;
 }
 
 h1 {
@@ -21,5 +22,5 @@ h1 {
 	width: 700px;
 	margin: 0 auto;
 	opacity: 0.8;
-	top: 60px;
+	top: 90px;
 }
