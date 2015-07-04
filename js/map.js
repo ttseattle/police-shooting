@@ -54,7 +54,8 @@ var customBuild = function(data, map) {
   //var yearArray = [];
   var fifteenArray = [];
   data.map(function(d){
-    var text = d["Victim Name"];
+    var name = d["Victim Name"];
+    var summary = d["Summary"];
     var age = d["Victim's Age"];
     var gender = d["Victim's Gender"];
     var color;
@@ -68,7 +69,7 @@ var customBuild = function(data, map) {
       color = 'blue';
     } else { //gender == "Unknown"
       color = 'yellow';
-    }
+    } 
     var marker = new L.circleMarker([d.lat, d.lng], {
       radius: age/10,
       color: color
@@ -78,7 +79,13 @@ var customBuild = function(data, map) {
       fifteenArray.push(marker);
     }
     marker.addTo(map);
-    marker.bindPopup(text);
+    //marker.bindPopup(text);
+    marker.on('mouseover', function(evt) {
+      evt.target.bindPopup(name).openPopup();
+    });
+    marker.on('click', function(evt) {
+      console.log(summary);
+    });
   });
   var fifteens = L.layerGroup(fifteenArray);
   var fifteenMap = {
