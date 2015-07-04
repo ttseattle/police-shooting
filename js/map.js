@@ -83,9 +83,11 @@ var customBuild = function(data, map) {
     marker.on('mouseover', function(evt) {
       evt.target.bindPopup(name).openPopup();
     });
-    marker.on('click', function() {
+    marker.on('mouseout', function(evt) {
       evt.target.bindPopup(name).closePopup();
-      console.log('you clicked a marker');
+    });
+    marker.on('click', function() {
+      alert(summary);
     });
   });
   /*var fifteens = L.layerGroup(fifteenArray);
