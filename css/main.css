@@ -2,6 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 /* You'll probably want to add some styles here */
+#head-info {
+	background-color: black;
+	width: 100%;
+	position: fixed;
+}
+
 h1 {
 	text-align: center;
 	font-style: bold;
@@ -9,27 +15,12 @@ h1 {
 	color: white;
 }
 
-#head-info {
-	background-color: black;
-	width: 100%;
-	position: fixed;
-}
-
-p {
-	font-family: 'Roboto Condensed';
-}
-
-#container {
-	border: 2px solid black;
-}
-
 #info {
+	font-family: 'Roboto Condensed';
 	background-color: white;
 	width: 700px;
 	margin: 0 auto;
 	opacity: 0.8;
 }
 
-body {
-	background-color: grey;
-}
+
