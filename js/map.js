@@ -24,7 +24,6 @@ var drawMap = function() {
     "Daytime": lightLayer,
     "Nighttime": darkLayer,
   };
-  L.control.layers(maps).addTo(map);
   // Execute your function to get data
   getData(map);
 }
@@ -144,5 +143,5 @@ var customBuild = function(data, map) {
     "December": decMap,
     "Unknown": unknownMap
   }
-  L.control.layers(null, monthMap).addTo(map);
+  L.control.layers(maps, monthMap).addTo(map);
 }
