@@ -81,7 +81,7 @@ var customBuild = function(data, map) {
     marker.addTo(map);
     //marker.bindPopup(text);
     marker.on('mouseover', function(evt) {
-      evt.target.bindPopup(name).openPopup();
+      evt.target.bindPopup(summary).openPopup();
     });
     marker.on('click', function(evt) {
       evt.target.bindPopup(summary);
