@@ -21,6 +21,10 @@ h1 {
 	width: 700px;
 	margin: 0 auto;
 	opacity: 0.8;
+	top: 100px;
 }
 
+#container {
+	top: 200px;
+}
 
