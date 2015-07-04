@@ -81,11 +81,12 @@ var customBuild = function(data, map) {
     marker.addTo(map);
     //marker.bindPopup(text);
     marker.on('mouseover', function(evt) {
-      evt.target.bindPopup(summary).openPopup();
+      evt.target.bindPopup(name).openPopup();
     });
-    marker.on('click', function() {
+    /*marker.on('click', function() {
       console.log(summary);
-    });
+    });*/
+    marker.bindPopup(summary);
   });
   var fifteens = L.layerGroup(fifteenArray);
   var fifteenMap = {
