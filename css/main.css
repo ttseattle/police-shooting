@@ -6,14 +6,20 @@ h1 {
 	text-align: center;
 	font-style: bold;
 	font-family: 'Oswald';
-	color: blue;
-}
-
-p {
-	font-family: 'Roboto Condensed';
-
+	color: white;
 }
 
 #container {
 	border: 2px solid black;
+}
+
+#info {
+	background-color: white;
+	font-family: 'Roboto Condensed';
+	width: 700px;
+	margin: 0 auto;
+}
+
+body {
+	background-color: navy;
 }

@@ -1,4 +1,4 @@
-var maps;
+var lightAndDark;
 
 // Function to draw your map
 var drawMap = function() {
@@ -20,7 +20,7 @@ var drawMap = function() {
   });
   // Add the layer to your map
   lightLayer.addTo(map);
-  var maps = {
+  lightAndDark = {
     "Daytime": lightLayer,
     "Nighttime": darkLayer,
   };
@@ -143,5 +143,5 @@ var customBuild = function(data, map) {
     "December": decMap,
     "Unknown": unknownMap
   }
-  L.control.layers(maps, monthMap).addTo(map);
+  L.control.layers(lightAndDark, monthMap).addTo(map);
 }
