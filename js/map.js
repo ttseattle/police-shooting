@@ -141,5 +141,5 @@ var customBuild = function(data, map) {
     "December": decMap,
     "Unknown": unknownMap
   }
-  monthMap.addTo(map);
+  L.control.layers(monthMap).addTo(map);
 }
