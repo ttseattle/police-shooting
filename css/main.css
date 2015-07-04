@@ -14,9 +14,9 @@ p {
 }
 
 #container {
-	border: 3px solid white;
+	border: 2px solid black;
 }
 
 body {
-	background-color: lightgrey;
+	background-color: cadetblue;
 }

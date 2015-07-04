@@ -49,8 +49,9 @@ var customBuild = function(data, map) {
     var summary = d["Summary"];
     var age = d["Victim's Age"];
     var gender = d["Victim's Gender"];
+    var month = parseInt(d["Date Searched"]);
+
     var color;
-    var year = (new Date(d["Timestamp"])).getFullYear();
     if (gender == "Female") {
       color = 'red';
     } else if (gender == "Male") {
@@ -69,5 +70,39 @@ var customBuild = function(data, map) {
     marker.on('mouseout', function(evt) {
       evt.target.bindPopup(name).closePopup();
     });
+    if (month == 1) {
+      jan.push(marker);
+    } else if (month == 2) {
+      feb.push(marker);
+    } else if (month == 3) {
+      mar.push(marker);
+    } else if (month == 4) {
+      apr.push(marker);
+    } else if (month == 5) {
+      may.push(marker);
+    } else if (month == 6) {
+      jun.push(marker);
+    } else if (month == 7) {
+      jul.push(marker);
+    }
+
   });
+  var janMap = L.layerGroup(jan);
+  var febMap = L.layerGroup(feb);
+  var marMap = L.layerGroup(mar);
+  var aprMap = L.layerGroup(apr);
+  var mayMap = L.layerGroup(may);
+  var junMap = L.layerGroup(jun);
+  var julMap = L.layerGroup(jul);
+
+  var monthMap = {
+    "January": janMap,
+    "February": febMap,
+    "March": marMap,
+    "April": aprMap,
+    "May": mayMap,
+    "June": junMap,
+    "July": julMap
+  }
+  L.control.layers(monthMap).addTo(map);
 }
