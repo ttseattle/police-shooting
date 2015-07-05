@@ -42,3 +42,9 @@ a:link, a:visited {
 a:hover, a:focus {
 	color: yellow;
 }
+
+#clear {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+}

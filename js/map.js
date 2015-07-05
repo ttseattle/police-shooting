@@ -57,6 +57,7 @@ var customBuild = function(data, map) {
   var nov = [];
   var dec = [];
   var unknown = [];
+  var none = [];
 
   data.map(function(d){
     var color;
@@ -145,7 +146,8 @@ var customBuild = function(data, map) {
     "October": octMap,
     "November": novMap,
     "December": decMap,
-    "Unknown": unknownMap
+    "Unknown": unknownMap,
+    "None": none
   }
 
   L.control.layers(lightAndDark, monthMap).addTo(map);
