@@ -149,5 +149,5 @@ var customBuild = function(data, map) {
   }
 
   L.control.layers(lightAndDark, monthMap).addTo(map);
-  $('Map').addTo(map); //set all months as default
+  monthMap.addTo(map); //set all months as default
 }
