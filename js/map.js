@@ -57,13 +57,15 @@ var customBuild = function(data, map) {
   var nov = [];
   var dec = [];
   var unknown = [];
+
   data.map(function(d){
+    var color;
+    var gender = d["Victim's Gender"];
+    var age = d["Victim's Age"];
     var name = d["Victim Name"];
     var summary = d["Summary"];
-    var age = d["Victim's Age"];
-    var gender = d["Victim's Gender"];
     var month = parseInt(d["Date Searched"]);
-    var color;
+
     if (gender == "Female") {
       color = 'red';
     } else if (gender == "Male") {
@@ -71,16 +73,19 @@ var customBuild = function(data, map) {
     } else { //gender == "Unknown"
       color = 'yellow';
     } 
+
     var marker = new L.circleMarker([d.lat, d.lng], {
       radius: age/10,
       color: color
     });
+
     marker.on('mouseover', function(evt) {
       evt.target.bindPopup(name).openPopup();
     });
     marker.on('mouseout', function(evt) {
       evt.target.bindPopup(name).closePopup();
     });
+
     if (month == 1) {
       jan.push(marker);
     } else if (month == 2) {
@@ -110,6 +115,7 @@ var customBuild = function(data, map) {
     }
     all.push(marker);
   });
+
   var allMap = L.layerGroup(all);
   var janMap = L.layerGroup(jan);
   var febMap = L.layerGroup(feb);
@@ -141,6 +147,11 @@ var customBuild = function(data, map) {
     "December": decMap,
     "Unknown": unknownMap
   }
+
   L.control.layers(lightAndDark, monthMap).addTo(map);
   allMap.addTo(map); //set all months as default
+
+  button.on("click", function() {
+    monthMap.clearLayers();
+  });
 }
