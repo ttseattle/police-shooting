@@ -40,5 +40,5 @@ a:link, a:visited {
 }
 
 a:hover, a:focus {
-	color: yellow;
+	font-style: italic;
 }
